@@ -26,6 +26,7 @@ def readtxt(filname):
         lines = f.readlines()
     data = []
     for i in lines:
+        print(i)
         x,y,w,h,cla,cat,_,_ = map(int, i.split('\n')[0].split(','))
         # print(i.split('\n')[0])
         # print(x,y,w,h,cla,cat)
