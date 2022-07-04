@@ -27,8 +27,15 @@ def readtxt(filname):
     data = []
     for i in lines:
         print(i)
-        print( i.split('\n')[0].split(',') )
-        x,y,w,h,cla,cat,_,_,_ =  i.split('\n')[0].split(',')
+        print(i.split('\n')[0].split(','))
+
+        if len(i.split('\n')[0].split(',')) == 9:
+            x,y,w,h,cla,cat,_,_,_ =  i.split('\n')[0].split(',')
+
+        if len(i.split('\n')[0].split(',')) == 9:
+            x,y,w,h,cla,cat,_,_ =  i.split('\n')[0].split(',')
+
+
         x,y,w,h,cla,cat = int(x), int(y), int(w), int(h),int(cla), int(cat)
         # print(i.split('\n')[0])
         # print(x,y,w,h,cla,cat)
