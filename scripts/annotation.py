@@ -26,8 +26,8 @@ def readtxt(filname):
         lines = f.readlines()
     data = []
     for i in lines:
-        print(i)
-        print(i.split('\n')[0].split(','))
+        # print(i)
+        # print(i.split('\n')[0].split(','))
 
         if len(i.split('\n')[0].split(',')) == 9:
             x,y,w,h,cla,cat,_,_,_ =  i.split('\n')[0].split(',')
@@ -57,5 +57,7 @@ all_files = os.listdir(path)
 
 for f in all_files:
     d = readtxt(os.path.join(path,f))
-    print(d)
+    # print(d)
+    print('current file',f)
     writetxt(d, os.path.join('/home/saiteja/DetectTech/dataset/VisDrone2019-DET-train/', 'labels',f))
+    print('written to',  os.path.join('/home/saiteja/DetectTech/dataset/VisDrone2019-DET-train/', 'labels',f))
