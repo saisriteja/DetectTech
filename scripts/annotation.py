@@ -51,7 +51,8 @@ print()
 import os
 from glob import glob
 
-path = '/home/saiteja/DetectTech/dataset/VisDrone2019-DET-train/annotations'
+main_path = 'D:\\projects\\Detect\\visdrone\\val\\'
+path = main_path + 'annotations'
 
 all_files = os.listdir(path)
 
@@ -59,5 +60,5 @@ for f in all_files:
     d = readtxt(os.path.join(path,f))
     # print(d)
     print('current file',f)
-    writetxt(d, os.path.join('/home/saiteja/DetectTech/dataset/VisDrone2019-DET-train/', 'labels',f))
-    print('written to',  os.path.join('/home/saiteja/DetectTech/dataset/VisDrone2019-DET-train/', 'labels',f))
+    writetxt(d, os.path.join(main_path, 'labels',f))
+    print('written to',  os.path.join(main_path, 'labels',f))
