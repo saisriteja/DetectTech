@@ -32,7 +32,7 @@ def readtxt(filname):
         if len(i.split('\n')[0].split(',')) == 9:
             x,y,w,h,cla,cat,_,_,_ =  i.split('\n')[0].split(',')
 
-        if len(i.split('\n')[0].split(',')) == 9:
+        if len(i.split('\n')[0].split(',')) == 8:
             x,y,w,h,cla,cat,_,_ =  i.split('\n')[0].split(',')
 
 
