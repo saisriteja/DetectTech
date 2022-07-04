@@ -28,7 +28,8 @@ def readtxt(filname):
     for i in lines:
         print(i)
         print( i.split('\n')[0].split(',') )
-        x,y,w,h,cla,cat,_,_ = map(int, i.split('\n')[0].split(','))
+        x,y,w,h,cla,cat,_,_,_ =  i.split('\n')[0].split(',')
+        x,y,w,h,cla,cat = int(x), int(y), int(w), int(h),int(cla), int(cat)
         # print(i.split('\n')[0])
         # print(x,y,w,h,cla,cat)
         # print('-----------------')
