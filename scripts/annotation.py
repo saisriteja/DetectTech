@@ -42,7 +42,7 @@ def readtxt(filname):
         # print('-----------------')
         if cla == 1:
             'car 0.00 0 0.00 587.01 173.33 614.12 200.12 0.00 0.00 0.00 0.00 0.00 0.00 0.00'
-            data.append(f'{categories[cat]} 0.00 0 0.00 {x} {y} {w} {h} 0.00 0.00 0.00 0.00 0.00 0.00 0.00')
+            data.append(f'{categories[cat]} 0.00 0 0.00 {x} {y} {x+w} {y+h} 0.00 0.00 0.00 0.00 0.00 0.00 0.00')
     return data
 
 
@@ -51,7 +51,7 @@ print()
 import os
 from glob import glob
 
-main_path = 'D:\\projects\\Detect\\visdrone\\val\\'
+main_path = 'D:\\projects\\Detect\\visdrone\\data\\test\\'
 path = main_path + 'annotations'
 
 all_files = os.listdir(path)
