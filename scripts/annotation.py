@@ -41,24 +41,28 @@ def readtxt(filname):
         # print(x,y,w,h,cla,cat)
         # print('-----------------')
         if cla == 1:
-            'car 0.00 0 0.00 587.01 173.33 614.12 200.12 0.00 0.00 0.00 0.00 0.00 0.00 0.00'
-            data.append(f'{categories[cat]} 0.00 0 0.00 {x} {y} {x+w} {y+h} 0.00 0.00 0.00 0.00 0.00 0.00 0.00')
+            if cat == 1 or cat == 3:
+                data.append(f'{categories[cat]} 0.00 0 0.00 {x} {y} {x+w} {y+h} 0.00 0.00 0.00 0.00 0.00 0.00 0.00')
+            
+    if len(data) == 0:
+        return None
     return data
-
 
 print()
 
 import os
 from glob import glob
 
-main_path = 'D:\\projects\\Detect\\visdrone\\data\\test\\'
+main_path = 'D:\\projects\\Detect\\visdrone\\data\\train\\'
 path = main_path + 'annotations'
 
 all_files = os.listdir(path)
 
 for f in all_files:
     d = readtxt(os.path.join(path,f))
+
+    if d != None:
     # print(d)
-    print('current file',f)
-    writetxt(d, os.path.join(main_path, 'labels',f))
-    print('written to',  os.path.join(main_path, 'labels',f))
+        print('current file',f)
+        writetxt(d, os.path.join(main_path, 'labels',f))
+        print('written to',  os.path.join(main_path, 'labels',f))
