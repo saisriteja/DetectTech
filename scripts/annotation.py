@@ -17,10 +17,6 @@ def writetxt(lines, filename):
             f.write(line)
             f.write('\n')
 
-
-    
-
-
 def readtxt(filname):
     with open(filname) as f:
         lines = f.readlines()
@@ -52,7 +48,7 @@ print()
 
 import os
 from glob import glob
-
+import shutil
 main_path = 'D:\\projects\\Detect\\visdrone\\data\\train\\'
 path = main_path + 'annotations'
 
@@ -64,5 +60,9 @@ for f in all_files:
     if d != None:
     # print(d)
         print('current file',f)
-        writetxt(d, os.path.join(main_path, 'labels',f))
-        print('written to',  os.path.join(main_path, 'labels',f))
+        writetxt(d, os.path.join('D:\\projects\\Detect\\DetectTech\\DetectTech\\scripts\\data', 'labels',f))
+        
+        print('written to',  os.path.join('D:\\projects\\Detect\\DetectTech\\DetectTech\\scripts\\data\\labels',f))
+        img_path = 'D:\\projects\\Detect\\DetectTech\\DetectTech\\scripts\\data\\images'
+        # shutil.copyfile(os.path.join(main_path, 'images', f.split('.')[0] + '.jpg'), os.path.join(img_path, f.split('.')[0] + '.jpg'))
+
