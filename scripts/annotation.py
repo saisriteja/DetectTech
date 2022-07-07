@@ -37,7 +37,7 @@ def readtxt(filname):
         # print(x,y,w,h,cla,cat)
         # print('-----------------')
         if cla == 1:
-            if cat == 1 or cat == 3:
+            if cat == 1 or cat == 2:
                 data.append(f'{categories[cat]} 0.00 0 0.00 {x} {y} {x+w} {y+h} 0.00 0.00 0.00 0.00 0.00 0.00 0.00')
             
     if len(data) == 0:
@@ -61,8 +61,7 @@ for f in all_files:
     # print(d)
         print('current file',f)
         writetxt(d, os.path.join('D:\\projects\\Detect\\DetectTech\\DetectTech\\scripts\\data', 'labels',f))
-        
         print('written to',  os.path.join('D:\\projects\\Detect\\DetectTech\\DetectTech\\scripts\\data\\labels',f))
         img_path = 'D:\\projects\\Detect\\DetectTech\\DetectTech\\scripts\\data\\images'
-        # shutil.copyfile(os.path.join(main_path, 'images', f.split('.')[0] + '.jpg'), os.path.join(img_path, f.split('.')[0] + '.jpg'))
+        shutil.copyfile(os.path.join(main_path, 'images', f.split('.')[0] + '.jpg'), os.path.join(img_path, f.split('.')[0] + '.jpg'))
 
